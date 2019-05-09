@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h3>Send Email </h3>
+    <form action="" method="post">
+
+        {% csrf_token %}
+        
+        <div class= 'form-group'>
+            <fieldset>
+                <input class = 'from-control' type="text" name="subject" placeholder='subject'><br>
+                
+                <input class = 'from-control' type="text-area" name="to_email" placeholder='to_email'><br>
+                <button type="submit">Submit</button>
+                </fieldset>
+        </div>
+       
+    </form>
+</body>
+
+</html>
