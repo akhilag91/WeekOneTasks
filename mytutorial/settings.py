@@ -130,7 +130,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'akhila@tapchief.com'
-EMAIL_HOST_PASSWORD = 'WED@01022017'
+EMAIL_HOST_PASSWORD = ''
 
 """ for mail catcher """
 if DEBUG:
