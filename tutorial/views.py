@@ -12,6 +12,7 @@ from mytutorial import settings
 from django.core.mail import EmailMultiAlternatives
 
 from django.template.loader import render_to_string
+from tutorial.tasks import sendmail
 
 """ sending text messages """
 
@@ -41,12 +42,8 @@ def sendemail(request):
     elif request.method  == "POST":
         subject = request.POST.get('subject', '')
         to_email = request.POST.get('to_email', '')
-        from_email =  'akhila'
-    
-        html_content = render_to_string('Todo.html', {'subject' : subject})
-        msg = EmailMultiAlternatives(subject, html_content, from_email, [to_email])
-        msg.attach_alternative(html_content, "text/html")
-        msg.send()
+        from_email =  'akhila<akhila@tapchief.com>'
+        sendmail.delay(subject=subject, from_email=from_email, to_email=to_email)
         return HttpResponse('success')
 
 

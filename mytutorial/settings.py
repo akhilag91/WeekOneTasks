@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -130,13 +131,16 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'akhila@tapchief.com'
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_PASSWORD = os.environ.get('pass')
+
+
 
 """ for mail catcher """
-if DEBUG:
+""" if DEBUG:
     EMAIL_HOST = '127.0.0.1'
     EMAIL_HOST_USER = ''
     EMAIL_HOST_PASSWORD = ''
     EMAIL_PORT = 1025
     EMAIL_USE_TLS = False
 
+ """
